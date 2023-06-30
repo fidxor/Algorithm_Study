@@ -40,12 +40,10 @@ def workProgress(progresses, speeds):
     # 리스트 맨앞의 정수가 100이 되는데 걸리는 일수를 계산후 모든 리스트에 적용해서 계산.
     remainProgress = (100 - progresses[0]) // speeds[0]
 
+    # speed * 남은일수를 했을때 100이 되는지 검증후 모자르면 1올려줌.
     valProgress = progresses[0] + (remainProgress * speeds[0])
-
     if valProgress < 100:
-        remainProgress += 1
-
-    index = 0
+        remainProgress += 1    
 
     # 리스트 모든 원소에 계산해준다.
     for i in range(0, len(progresses)):
