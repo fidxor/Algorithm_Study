@@ -24,8 +24,6 @@ def workProgress(progresses, speeds):
     if valProgress < 100:
         remainProgress += 1
 
-    index = 0
-
     # 리스트 모든 원소에 계산해준다.
     for i in range(0, len(progresses)):
         progresses[i] = progresses[i] + (remainProgress * speeds[i])
