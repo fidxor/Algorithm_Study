@@ -19,8 +19,10 @@ def solution(citations):
             break
         elif i < index:
             answer = index - 1
-            break            
-        
+            break
+        else:
+             answer = index
+                                
         index += 1
         
     return answer
