@@ -21,3 +21,5 @@ def BubbleSort(N, K):
         print(-1)
 
 BubbleSort(lst[0], lst[1])
+
+# 백준에 굴복하고 말았다.
