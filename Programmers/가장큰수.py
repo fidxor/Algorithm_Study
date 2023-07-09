@@ -13,22 +13,29 @@ numbers의 원소는 0 이상 1,000 이하입니다.
 정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
 
 '''
+from itertools import permutations
 
 def solution(numbers):
     answer = ''
-    '''
-    리스트를 문자열로 바꾸고
-    문자[0] 숫자 기준으로 내림차순 정렬 시킨다.
-    문자[0] 숫자가 같을 경우 문자[-1]문자와 비교해서 내림차순 정렬 한다.
-    그렇게 정렬후에 전부 스트링으로 합치기
-    '''
-    '''
-    
-    '''
+
     return answer
 
-
-
-
-solution([3, 30, 34, 5, 9])
+print(solution([3, 30, 34, 5, 9]))
 # [3, 30, 34, 5, 9]	"9534330"
+
+'''
+시간초과
+def solution(numbers):
+    answer = ''
+        
+    numbers = list(permutations(numbers, len(numbers)))
+    lst = []
+
+    for i in numbers:
+        strnum = ''.join(map(str, i))
+        lst.append(int(strnum))
+
+    answer = str(max(lst))
+
+    return answer
+'''
