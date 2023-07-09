@@ -18,14 +18,13 @@ from itertools import permutations
 def solution(numbers):
     answer = ''
 
-    numbers = list(permutations(numbers, len(numbers)))
-    lst = []
+    numbers = list(str(x) for x in numbers)
 
-    for i in numbers:
-        strnum = ''.join(map(str, i))
-        lst.append(int(strnum))
+    print(numbers)
 
-    answer = str(max(lst))
+    lst = sorted(numbers, key=lambda x:(x[0]), reverse=True)
+
+    print(lst)
 
     return answer
 
@@ -45,6 +44,16 @@ def solution(numbers):
         lst.append(int(strnum))
 
     answer = str(max(lst))
+
+    return answer
+
+def solution(numbers):
+    answer = ''
+
+    # numbers = list(permutations(numbers, len(numbers)))
+    numbers = list(map(''.join, permutations(map(str, numbers), len(numbers))))
+    
+    answer = max(numbers)
 
     return answer
 '''
