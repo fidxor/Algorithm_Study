@@ -18,6 +18,15 @@ from itertools import permutations
 def solution(numbers):
     answer = ''
 
+    numbers = list(permutations(numbers, len(numbers)))
+    lst = []
+
+    for i in numbers:
+        strnum = ''.join(map(str, i))
+        lst.append(int(strnum))
+
+    answer = str(max(lst))
+
     return answer
 
 print(solution([3, 30, 34, 5, 9]))
