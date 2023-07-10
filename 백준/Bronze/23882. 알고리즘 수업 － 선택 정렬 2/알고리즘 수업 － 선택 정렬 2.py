@@ -22,6 +22,8 @@ def SelectSort(N, K):
     if cnt < K:
         print(-1)
     else:
-        print(*numlst) # [2, 1, 3, 4, 5] 이렇게 출력되던걸 2 1 3 4 5 이렇게 출력되도록
+        print(*numlst) 
+        # [2, 1, 3, 4, 5] 이렇게 출력되던걸 2 1 3 4 5 이렇게 출력되도록
+        # * 은 파이썬의 언패킹으로 사용될수 있다.
 
 SelectSort(lst[0], lst[1])

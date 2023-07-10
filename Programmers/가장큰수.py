@@ -13,23 +13,21 @@ numbers의 원소는 0 이상 1,000 이하입니다.
 정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
 
 '''
-from itertools import permutations
-
 def solution(numbers):
     answer = ''
 
-    numbers = list(str(x) for x in numbers)
+    # 숫자로 크기를 비교하는게 아니고 스트링으로 크기를 비교한다.
+    numbers = list(str(x) for x in numbers)    
+    lst = sorted(numbers, key=lambda x:x * 3, reverse=True)
 
-    print(numbers)
+    answer = ''.join(lst)
 
-    lst = sorted(numbers, key=lambda x:(x[0]), reverse=True)
-
-    print(lst)
-
-    return answer
+    return str(int(answer))
 
 print(solution([3, 30, 34, 5, 9]))
 # [3, 30, 34, 5, 9]	"9534330"
+
+
 
 '''
 시간초과
@@ -56,4 +54,19 @@ def solution(numbers):
     answer = max(numbers)
 
     return answer
+
+테스트케이스 11 실패
+def solution(numbers):
+    answer = ''
+
+    numbers = list(str(x) for x in numbers)    
+
+    # 숫자로 크기를 비교하는게 아니고 스트링으로 크기를 비교한다.
+    lst = sorted(numbers, key=lambda x:x * 3, reverse=True)
+
+    answer = ''.join(lst)
+
+    return answer
+
+print(solution([3, 30, 34, 5, 9]))
 '''
