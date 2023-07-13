@@ -7,5 +7,5 @@ def solution(numbers):
 
     answer = ''.join(lst)
 
-    # 앞자리 수자 0일경우 0을 없애주기 위해 정수로 변경후 다시 문자열로 변환
+    # 앞자리 숫자 0일경우 0을 없애주기 위해 정수로 변경후 다시 문자열로 변환
     return str(int(answer))

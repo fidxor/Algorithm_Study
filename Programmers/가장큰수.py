@@ -20,11 +20,13 @@ def solution(numbers):
     numbers = list(str(x) for x in numbers)    
     lst = sorted(numbers, key=lambda x:x * 3, reverse=True)
 
+    print(lst)
+
     answer = ''.join(lst)
 
     return str(int(answer))
 
-print(solution([3, 30, 34, 5, 9]))
+print(solution([9, 98, 999, 998, 99, 8, 898]))
 # [3, 30, 34, 5, 9]	"9534330"
 
 
@@ -70,3 +72,26 @@ def solution(numbers):
 
 print(solution([3, 30, 34, 5, 9]))
 '''
+
+def solution_1(lst):
+    answer = ''
+    tmplst = []
+
+    numbers = list(str(x) * 2 for x in lst)    
+
+    numbers.sort(reverse=True)
+
+    print(numbers)
+
+    for i in numbers:
+        tmplst.append(i[:len(i) // 2])
+
+    print(tmplst)
+
+    return answer
+
+print(solution_1([9, 98, 999, 998, 99, 8, 898]))
+# print(solution_1([3, 303, 34, 5, 9, 515, 30]))
+
+
+print("3" < "30")
