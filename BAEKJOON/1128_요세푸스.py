@@ -9,29 +9,50 @@ N과 K가 주어지면 (N, K)-요세푸스 순열을 구하는 프로그램을 �
 입력
 첫째 줄에 N과 K가 빈 칸을 사이에 두고 순서대로 주어진다. (1 ≤ K ≤ N ≤ 5,000)
 '''
+from collections import deque
 
 class ListNode:
     def __init__(self, data, next = None):
-        self.data = data
+        self.data = data        
         self.next = next
 
-# N, K = map(int, input().split())
-
-def yosepus(N, K):
+N, K = map(int, input().split())
     
-    resultLst = []
+resultLst = deque()
+count = 0
+nodecnt = 0
 
-    #linkedList 생성
-    head = ListNode(1)
+#linkedList 생성
+head = ListNode(1)
+nodecnt += 1
 
-    for i in range(2, N + 1):
-        pass
+ptr = head
+for i in range(2, N + 1):
+    temp = ListNode(i, head)
+    ptr.next = temp
+    ptr = ptr.next
+    nodecnt += 1
+
+while nodecnt > 0:
+    if count == K - 1:
+        # 노드 삭제
+        resultLst.append(head.data)
+        temp.next = head.next
+        head = head.next
+
+        nodecnt -= 1
+        count = 0
+
+    count += 1
+    temp = head
+    head = head.next
     
-    resultLst = str(resultLst).replace('[', '<').replace(']', '>')
 
-    print(resultLst)
+resultLst = str(resultLst).replace('[', '<').replace(']', '>')
 
-yosepus(7, 3)
+resultLst
+
+
 
 # <3, 6, 2, 7, 5, 1, 4>
 
@@ -61,6 +82,49 @@ while len(numbersLst) > 0:
         startIdx = 0
 
     # resultLst = "<" + ", ".join(str(x) for x in resultLst) + ">"
+resultLst = str(resultLst).replace('[', '<').replace(']', '>')
+
+print(resultLst)
+
+시간초과
+
+class ListNode:
+    def __init__(self, data, next = None):
+        self.data = data        
+        self.next = next
+
+N, K = map(int, input().split())
+    
+resultLst = []
+count = 0
+nodecnt = 0
+
+#linkedList 생성
+head = ListNode(1)
+nodecnt += 1
+
+ptr = head
+for i in range(2, N + 1):
+    temp = ListNode(i, head)
+    ptr.next = temp
+    ptr = ptr.next
+    nodecnt += 1
+
+while nodecnt > 0:
+    if count == K - 1:
+        # 노드 삭제
+        resultLst.append(head.data)
+        temp.next = head.next
+        head = head.next
+
+        nodecnt -= 1
+        count = 0
+
+    count += 1
+    temp = head
+    head = head.next
+    
+
 resultLst = str(resultLst).replace('[', '<').replace(']', '>')
 
 print(resultLst)

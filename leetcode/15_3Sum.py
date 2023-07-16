@@ -6,7 +6,9 @@ def threeSum(nums: list[int]) -> list[list[int]]:
     templst = []
     
     for i in lst:
-        if(sum(i) == 0):            
+        if(sum(i) == 0):
+            i = [*i]
+            i.sort()
             templst.append(i)
 
     print(templst)
