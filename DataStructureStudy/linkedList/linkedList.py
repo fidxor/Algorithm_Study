@@ -1,6 +1,6 @@
 from typing import Any, Type
 
-class Node:
+class ListNode:
     '''연결 리스트용 노드 클래스'''
     def __init__(self, data : Any = None, next : Any = None):
         '''초기화'''
@@ -40,7 +40,7 @@ class LinkedList:
     def add_first(self, data: Any) -> None:
         '''맨앞에 노드를 삽입'''
         ptr = self.head # 삽입하기전의 머리노드
-        self.head = self.current = Node(data, ptr)
+        self.head = self.current = ListNode(data, ptr)
         self.no += 1
 
     def add_last(self, data: Any):
@@ -51,7 +51,7 @@ class LinkedList:
             ptr = self.head
             while ptr.next is not None:
                 ptr = ptr.next
-            ptr.next = self.current = Node(data, None)
+            ptr.next = self.current = ListNode(data, None)
             self.no += 1
 
     def remove_first(self) -> None:
@@ -76,7 +76,7 @@ class LinkedList:
                 self.current = pre
                 self.no -= 1
 
-    def remove(self, p: Node) -> None:
+    def remove(self, p: ListNode) -> None:
         '''노드 p를 삭제'''
         if self.head is not None:       # 노드가 비어있지 않으면
             if p is self.head:          # p가 머리 노드이면
@@ -132,7 +132,7 @@ class LinkedList:
 class LinkedListIterator:
     '''클래스 LinkedList의 이터레이터용 클래스'''
 
-    def __init__(self, head: Node):
+    def __init__(self, head: ListNode):
         self.current = head
 
     def __iter__(self):
