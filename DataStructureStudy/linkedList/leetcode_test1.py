@@ -25,10 +25,10 @@ def addTwoNumbers(l1, l2):
 
     lst3 = list([int(a) for a in str(num3)])
 
-    head = Node(lst3[0])    
+    head = ListNode(lst3[0])    
     for i in range(1, len(lst3)):
         ptr = head
-        head = Node(lst3[i], ptr)
+        head = ListNode(lst3[i], ptr)
 
 
     return head

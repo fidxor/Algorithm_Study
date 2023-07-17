@@ -14,8 +14,7 @@ while len(numbersLst) > 0:
     else:
         numbersLst.append(numbersLst.popleft())
         count += 1
-
-    # resultLst = "<" + ", ".join(str(x) for x in resultLst) + ">"
+    
 resultLst = str(resultLst).replace('[', '<').replace(']', '>')
 
 print(resultLst)
