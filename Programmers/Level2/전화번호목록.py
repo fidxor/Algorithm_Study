@@ -1,14 +1,25 @@
 def solution(phone_book):
     answer = True
     phonedict = {}
+    index = 0
 
-    
+    for i in phone_book:
+        phonedict[i] = index
+        index += 1
+
+    for i in phonedict:
+        key = ""
+        for j in i:
+            key += j
+            if key != i:
+                if key in phonedict:
+                    return False
 
     return answer
 
 
-print(solution(["12","4875", "9901", "123","1235","567", "777", "88"]))
-# print(solution(['123', '456', '789']))
+# print(solution(["12","4875", "9901", "123","1235","567", "777", "88"]))
+print(solution(['123', '456', '789']))
 # print(solution(["119", "97674223", "1195524421"]))
 
 	

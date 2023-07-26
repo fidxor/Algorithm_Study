@@ -31,6 +31,7 @@ def solution(genres, plays):
         songDict[i] += list([temp])
 
     # 리스트 마지막에 더해준 값을 기준으로 dictionary key를 정렬시켜준다
+    print(songDict.items())
     songDict = dict(sorted(songDict.items(), key=lambda x : x[1][-1], reverse=True))
 
     # 결과 출력
@@ -42,3 +43,13 @@ def solution(genres, plays):
             answer.append(songDict[i][0][1])
 
     return answer
+
+'''
+딕셔너리 안에서의 정렬이 힘들었던 문제
+'''
+
+
+
+
+# solution(["pop", "pop", "pop", "rap", "rap"], [45, 50, 40, 60, 70])
+solution(["classic", "pop", "classic", "classic", "pop"], [500, 600, 150, 800, 2500])	#	[4, 1, 3, 0]

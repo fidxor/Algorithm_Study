@@ -7,3 +7,4 @@ for i in range(N):
     for j in range(K):
         inputWear = sys.stdin.readline().split()
         print(inputWear)
+
