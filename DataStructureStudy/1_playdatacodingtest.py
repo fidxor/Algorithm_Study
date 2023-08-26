@@ -17,32 +17,35 @@
 
 
 ### 3번 문제
-import sys
-import datetime
-N, K = map(int, input().split())
+# import sys
+# import datetime
+# N, K = map(int, input().split())
 
-timeDict = dict()
+# timeDict = dict()
 
-for i in range(N):
-    inoutTime = sys.stdin.readline().rstrip()
-    name, time = inoutTime.split()
-    time = datetime.datetime.strptime(time, '%H:%M')    
-    timelst = []
-    timelst.append(time)
+# for i in range(N):
+#     inoutTime = sys.stdin.readline().rstrip()
+#     name, time = inoutTime.split()
+#     time = datetime.datetime.strptime(time, '%H:%M')    
+#     timelst = []
+#     timelst.append(time)
 
-    if name not in timeDict:
-        timeDict[name] = timelst
-    else:
-        timeDict[name] += timelst
+#     if name not in timeDict:
+#         timeDict[name] = timelst
+#     else:
+#         timeDict[name] += timelst
 
-
-for times in timeDict.values():
-    totaltime = 0    
-    for i in range(0, len(times), 2):
-        time = times[i + 1] - times[i]
-        totaltime += time.seconds / 60 / 60
+# count = 0
+# for times in timeDict.values():
+#     totaltime = 0    
+#     for i in range(0, len(times), 2):
+#         time = times[i + 1] - times[i]
+#         totaltime += time.seconds / 60 / 60
     
-    print(totaltime)
+#     if totaltime >= K:
+#         count += 1
+
+# print(count)
     
 
 ### 4번 문제
